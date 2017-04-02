@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170402082024) do
+ActiveRecord::Schema.define(version: 20170402093931) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
+    t.integer  "movie_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "movie_relationships", force: :cascade do |t|
     t.integer  "movie_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
